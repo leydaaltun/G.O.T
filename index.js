@@ -39,4 +39,32 @@ function updateShowHtml(showdata) {
     document.querySelector('.summary').innerHTML = show.summary
     document.getElementById('schedule').innerHTML = show.schedule
     document.querySelector('.site').innerHTML = show.site
+
+    
+}
+
+const input = document.querySelector('.seriesSearch')
+//console.log(input)
+
+input.addEventListener('input',function(event){
+    const searchquery = event.target.value
+    if(searchquery.length > 2) {
+        fetch(`http://api.tvmaze.com/search/shows?q=${searchquery}`)
+        .then(function(res){
+            return res.json()
+        })
+        .then(function(showlist){
+            showSearchResults(showlist)
+        })
+
+    }
+    
+})
+
+function showSearchResults(showlist) {
+    console.log(showlist)
+    showlist.forEach(function(show){
+        console.log(show)
+        //console.log(show.show.name)
+    })
 }

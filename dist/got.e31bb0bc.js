@@ -154,6 +154,27 @@ function updateShowHtml(showdata) {
   document.getElementById('schedule').innerHTML = show.schedule;
   document.querySelector('.site').innerHTML = show.site;
 }
+
+var input = document.querySelector('.seriesSearch'); //console.log(input)
+
+input.addEventListener('input', function (event) {
+  var searchquery = event.target.value;
+
+  if (searchquery.length > 2) {
+    fetch("http://api.tvmaze.com/search/shows?q=".concat(searchquery)).then(function (res) {
+      return res.json();
+    }).then(function (showlist) {
+      showSearchResults(showlist);
+    });
+  }
+});
+
+function showSearchResults(showlist) {
+  console.log(showlist);
+  showlist.forEach(function (show) {
+    console.log(show); //console.log(show.show.name)
+  });
+}
 },{}],"../../Users/leyda/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';

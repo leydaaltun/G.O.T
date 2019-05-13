@@ -5,6 +5,30 @@ body {
     background: linear-gradient(120.39deg, #D29C93 11.61%, #BA84A2 114.96%), #7E1AFC no-repeat;
 }
 
+.seriesSearch {
+    position: absolute;
+    top: 50px;
+    left: 783px;
+    width: 248px;
+    height: 45px;
+    border: 1px solid white;
+    background: #FFFFFF;
+    border-radius: 3px; 
+    background-image: url(/iconmonstr-search-thin.261a3e38.svg);
+    background-repeat: no-repeat;
+    background-position: 10px;
+    padding-left: 65px;
+    box-sizing: border-box;
+    
+    
+}
+
+input::placeholder {
+    color:  #AF6676;
+    font-size: 15px;
+    font-family: roboto;
+}
+
 .container {
     box-sizing: border-box;
     display: inline-block;
@@ -13,7 +37,7 @@ body {
     border-radius: 10px;
     width: 700px;
     height: auto;
-    margin: 31px 0 0 330px;
+    margin: 106px 0 0 330px;
     box-shadow: 0px 4px 47px rgba(0, 0, 0, 0.26);
 }
 
