@@ -118,7 +118,10 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"index.js":[function(require,module,exports) {
-fetch('http://api.tvmaze.com/singlesearch/shows?q=lost').then(function (res) {
+var queryString = new URLSearchParams(window.location.search);
+var showName = queryString.get('show');
+console.log(showName);
+fetch("http://api.tvmaze.com/singlesearch/shows?q=".concat(showName)).then(function (res) {
   return res.json();
 }).then(function (gotinfo) {
   //console.log(gotinfo)
@@ -179,7 +182,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50341" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51823" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

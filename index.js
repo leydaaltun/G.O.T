@@ -1,4 +1,10 @@
-fetch('http://api.tvmaze.com/singlesearch/shows?q=lost')
+const queryString = new URLSearchParams(window.location.search)
+const showName = queryString.get('show')
+console.log(showName)
+
+
+
+fetch(`http://api.tvmaze.com/singlesearch/shows?q=${showName}`)
     .then(function(res){
         return res.json()
     })
