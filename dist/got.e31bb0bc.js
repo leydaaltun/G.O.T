@@ -141,7 +141,7 @@ function updateShowHtml(showdata) {
   };
   console.log(show); // document.querySelector('h1').innerHTML = show.name
 
-  document.querySelector('img').src = show.image;
+  document.querySelector('.ironThrone').src = show.image;
   var genreHtml = "";
   show.genres.forEach(function (genre) {
     genreHtml += "<button class=\"type\"> ".concat(genre, " </button>");
@@ -172,7 +172,8 @@ input.addEventListener('input', function (event) {
 function showSearchResults(showlist) {
   console.log(showlist);
   showlist.forEach(function (show) {
-    console.log(show); //console.log(show.show.name)
+    console.log(show);
+    console.log(show.show.name);
   });
 }
 },{}],"../../Users/leyda/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -203,7 +204,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51823" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57803" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

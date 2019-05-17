@@ -19,6 +19,7 @@ body {
     background-position: 10px;
     padding-left: 65px;
     box-sizing: border-box;
+    display: inline-block;
     
     
 }
@@ -29,6 +30,14 @@ input::placeholder {
     font-family: roboto;
 }
 
+.logo{
+    width: 130px;
+    height: 35px;
+    position: absolute;
+    left: 335px;
+    top: 55px;
+}
+
 .container {
     box-sizing: border-box;
     display: inline-block;
@@ -37,11 +46,11 @@ input::placeholder {
     border-radius: 10px;
     width: 700px;
     height: auto;
-    margin: 106px 0 0 330px;
+    margin: 106px 0 0 331px;
     box-shadow: 0px 4px 47px rgba(0, 0, 0, 0.26);
 }
 
-img {
+.ironThrone {
     margin: 25px 0 0 17px;
     border-radius: 3px;
     float: left;
