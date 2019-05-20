@@ -1,6 +1,6 @@
 const queryString = new URLSearchParams(window.location.search)
 const showName = queryString.get('show')
-console.log(showName)
+//console.log(showName)
 
 
 
@@ -14,7 +14,7 @@ fetch(`http://api.tvmaze.com/singlesearch/shows?q=${showName}`)
     })
 
 function updateShowHtml(showdata) {
-    console.log(showdata)
+    //console.log(showdata)
 
     const show = {
         genres: showdata.genres,
@@ -25,7 +25,7 @@ function updateShowHtml(showdata) {
         schedule: `${showdata.schedule.time} on ${showdata.schedule.days[0]}`,
         summary: showdata.summary,
     }
-    console.log(show)
+    //console.log(show)
     // document.querySelector('h1').innerHTML = show.name
     document.querySelector('.ironThrone').src = show.image
     let genreHtml = ""
@@ -61,10 +61,17 @@ input.addEventListener('input',function(event){
     
 })
 
+const searchResults = document.querySelector('.searchResults')
+//console.log(searchResults)
+
 function showSearchResults(showlist) {
+    let html = ''
     console.log(showlist)
     showlist.forEach(function(show){
-        console.log(show)
+        //console.log(show)
         console.log(show.show.name)
+
+        html += `<a href="/?show=${show.show.name}"> ${show.show.name} </a>`
     })
+    searchResults.innerHTML = html
 }

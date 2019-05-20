@@ -119,8 +119,8 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   return newRequire;
 })({"index.js":[function(require,module,exports) {
 var queryString = new URLSearchParams(window.location.search);
-var showName = queryString.get('show');
-console.log(showName);
+var showName = queryString.get('show'); //console.log(showName)
+
 fetch("http://api.tvmaze.com/singlesearch/shows?q=".concat(showName)).then(function (res) {
   return res.json();
 }).then(function (gotinfo) {
@@ -129,7 +129,7 @@ fetch("http://api.tvmaze.com/singlesearch/shows?q=".concat(showName)).then(funct
 });
 
 function updateShowHtml(showdata) {
-  console.log(showdata);
+  //console.log(showdata)
   var show = {
     genres: showdata.genres,
     image: showdata.image.medium,
@@ -137,10 +137,10 @@ function updateShowHtml(showdata) {
     site: showdata.officialSite,
     rating: showdata.rating.average,
     schedule: "".concat(showdata.schedule.time, " on ").concat(showdata.schedule.days[0]),
-    summary: showdata.summary
-  };
-  console.log(show); // document.querySelector('h1').innerHTML = show.name
+    summary: showdata.summary //console.log(show)
+    // document.querySelector('h1').innerHTML = show.name
 
+  };
   document.querySelector('.ironThrone').src = show.image;
   var genreHtml = "";
   show.genres.forEach(function (genre) {
@@ -168,13 +168,17 @@ input.addEventListener('input', function (event) {
     });
   }
 });
+var searchResults = document.querySelector('.searchResults'); //console.log(searchResults)
 
 function showSearchResults(showlist) {
+  var html = '';
   console.log(showlist);
   showlist.forEach(function (show) {
-    console.log(show);
+    //console.log(show)
     console.log(show.show.name);
+    html += "<a href=\"/?show=".concat(show.show.name, "\"> ").concat(show.show.name, " </a>");
   });
+  searchResults.innerHTML = html;
 }
 },{}],"../../Users/leyda/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -204,7 +208,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57803" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60522" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
