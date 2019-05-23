@@ -62,16 +62,16 @@ input.addEventListener('input',function(event){
 })
 
 const searchResults = document.querySelector('.searchResults')
-//console.log(searchResults)
+console.log(searchResults)
 
 function showSearchResults(showlist) {
     let html = ''
     console.log(showlist)
     showlist.forEach(function(show){
-        //console.log(show)
+        console.log(show)
         console.log(show.show.name)
 
-        html += `<a href="/?show=${show.show.name}"> ${show.show.name} </a>`
+        html += `<li><a href="/?show=${show.show.name}"> ${show.show.name} </a></li>`
     })
     searchResults.innerHTML = html
 }
