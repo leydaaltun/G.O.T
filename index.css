@@ -31,9 +31,22 @@ body {
     font-family: roboto;
 }
 
-.searchResults.visible {
-    display: inline-block;
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: none;
+    /* background-color: rgba(5, 10, 30, 0.5); */
+    background-color: gray;
 }
+
+body.overlayVisible {
+    visibility: visible;
+}
+
+/* body.overlayVisible {
+    visibility: visible;
+} */
 
 .seriesSearch {
     position: absolute;
@@ -154,6 +167,7 @@ h1 {
 }
 
 a {
-    background-color: yellow;
+    color: black;
 }
+
 

@@ -121,7 +121,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 var queryString = new URLSearchParams(window.location.search);
 var showName = queryString.get('show'); //console.log(showName)
 
-fetch("http://api.tvmaze.com/singlesearch/shows?q=".concat(showName)).then(function (res) {
+fetch(" http://api.tvmaze.com/singlesearch/shows?q=".concat(showName)).then(function (res) {
   return res.json();
 }).then(function (gotinfo) {
   //console.log(gotinfo)
@@ -164,6 +164,7 @@ input.addEventListener('input', function (event) {
     fetch("http://api.tvmaze.com/search/shows?q=".concat(searchquery)).then(function (res) {
       return res.json();
     }).then(function (showlist) {
+      showSearchResultsOverlay();
       showSearchResults(showlist);
     });
   }
@@ -177,9 +178,19 @@ function showSearchResults(showlist) {
   showlist.forEach(function (show) {
     console.log(show);
     console.log(show.show.name);
+    showSearchResultsOverlay();
     html += "<li><a href=\"/?show=".concat(show.show.name, "\"> ").concat(show.show.name, " </a></li>");
   });
   searchResults.innerHTML = html;
+}
+
+var overlay = document.querySelector('.overlay');
+
+function showSearchResultsOverlay() {
+  document.body.classList.add('overlayVisible');
+  overlay.addEventListener('click', function (event) {
+    console.log(event);
+  });
 }
 },{}],"../../Users/leyda/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -209,7 +220,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60657" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62505" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -3,8 +3,7 @@ const showName = queryString.get('show')
 //console.log(showName)
 
 
-
-fetch(`http://api.tvmaze.com/singlesearch/shows?q=${showName}`)
+fetch(` http://api.tvmaze.com/singlesearch/shows?q=${showName}`)
     .then(function(res){
         return res.json()
     })
@@ -54,6 +53,7 @@ input.addEventListener('input',function(event){
             return res.json()
         })
         .then(function(showlist){
+            showSearchResultsOverlay()
             showSearchResults(showlist)
         })
 
@@ -61,17 +61,31 @@ input.addEventListener('input',function(event){
     
 })
 
+
+
 const searchResults = document.querySelector('.searchResults')
 console.log(searchResults)
 
 function showSearchResults(showlist) {
+    
     let html = ''
     console.log(showlist)
     showlist.forEach(function(show){
         console.log(show)
         console.log(show.show.name)
-
+        showSearchResultsOverlay()
         html += `<li><a href="/?show=${show.show.name}"> ${show.show.name} </a></li>`
     })
     searchResults.innerHTML = html
+    
+}
+
+const overlay = document.querySelector('.overlay')
+
+function showSearchResultsOverlay() {
+    document.body.classList.add('overlayVisible')
+
+    overlay.addEventListener('click',function(event){
+        console.log(event)
+    })
 }
