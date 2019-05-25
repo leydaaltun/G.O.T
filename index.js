@@ -56,7 +56,7 @@ input.addEventListener('input',function(event){
             showSearchResultsOverlay()
             showSearchResults(showlist)
         })
-
+    
     }
     
 })
@@ -83,9 +83,11 @@ function showSearchResults(showlist) {
 const overlay = document.querySelector('.overlay')
 
 function showSearchResultsOverlay() {
-    document.body.classList.add('overlayVisible')
-
+    document.body.classList.add('overlayVisible','results-visible')
     overlay.addEventListener('click',function(event){
-        console.log(event)
+        document.body.classList.remove('overlayVisible','results-visible')
     })
+
+
 }
+
