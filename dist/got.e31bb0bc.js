@@ -187,9 +187,9 @@ function showSearchResults(showlist) {
 var overlay = document.querySelector('.overlay');
 
 function showSearchResultsOverlay() {
-  document.body.classList.add('overlayVisible', 'results-visible');
+  document.body.classList.add('modal-visible');
   overlay.addEventListener('click', function (event) {
-    document.body.classList.remove('overlayVisible', 'results-visible');
+    document.body.classList.remove('modal-visible');
   });
 }
 },{}],"../../Users/leyda/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -220,7 +220,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62505" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62428" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -83,9 +83,9 @@ function showSearchResults(showlist) {
 const overlay = document.querySelector('.overlay')
 
 function showSearchResultsOverlay() {
-    document.body.classList.add('overlayVisible','results-visible')
+    document.body.classList.add('modal-visible')
     overlay.addEventListener('click',function(event){
-        document.body.classList.remove('overlayVisible','results-visible')
+        document.body.classList.remove('modal-visible')
     })
 
 
