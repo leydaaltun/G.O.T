@@ -121,7 +121,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 var queryString = new URLSearchParams(window.location.search);
 var showName = queryString.get('show'); //console.log(showName)
 
-fetch(" http://api.tvmaze.com/singlesearch/shows?q=".concat(showName)).then(function (res) {
+fetch(" https://api.tvmaze.com/singlesearch/shows?q=".concat(showName)).then(function (res) {
   return res.json();
 }).then(function (gotinfo) {
   //console.log(gotinfo)
@@ -161,7 +161,7 @@ input.addEventListener('input', function (event) {
   var searchquery = event.target.value;
 
   if (searchquery.length > 2) {
-    fetch("http://api.tvmaze.com/search/shows?q=".concat(searchquery)).then(function (res) {
+    fetch("https://api.tvmaze.com/search/shows?q=".concat(searchquery)).then(function (res) {
       return res.json();
     }).then(function (showlist) {
       showSearchResultsOverlay();
