@@ -141,7 +141,7 @@ function updateShowHtml(showdata) {
     // document.querySelector('h1').innerHTML = show.name
 
   };
-  document.querySelector('.ironThrone').src = show.image;
+  document.querySelector('.showImage').src = show.image;
   var genreHtml = "";
   show.genres.forEach(function (genre) {
     genreHtml += "<button class=\"type\"> ".concat(genre, " </button>");
@@ -220,7 +220,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62428" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51159" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -26,7 +26,7 @@ function updateShowHtml(showdata) {
         }
         //console.log(show)
         // document.querySelector('h1').innerHTML = show.name
-    document.querySelector('.ironThrone').src = show.image
+    document.querySelector('.showImage').src = show.image
     let genreHtml = ""
     show.genres.forEach(function(genre) {
         genreHtml += `<button class="type"> ${genre} </button>`
