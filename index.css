@@ -21,9 +21,11 @@ header {
 }
 
 .pinningHeader {
-    padding: 5px 15px 0 5px;
+    padding: 0 15px;
+    height: 65px;
     box-sizing: border-box;
     display: flex;
+    align-items: center;
 }
 
 .logo {
@@ -33,7 +35,7 @@ header {
 }
 
 .searchWrapper {
-    margin: 7px 0 0 46px;
+    margin-left: auto;
 }
 
 .seriesSearch {
@@ -61,6 +63,7 @@ header {
     z-index: 5;
     font-family: 'Roboto';
     opacity: 0.9;
+    position: absolute;
 }
 
 .overlay {
